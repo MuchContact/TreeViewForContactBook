@@ -1,4 +1,4 @@
-package tree.egova.com.cn.tree;
+package egova.com.cn.widget.model;
 
 import java.util.List;
 

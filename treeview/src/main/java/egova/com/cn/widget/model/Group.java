@@ -1,11 +1,11 @@
-package tree.egova.com.cn.tree;
+package egova.com.cn.widget.model;
 
 public interface Group {
     String name();
 
     ContactMember member(int childPosition);
 
-    void addMembers(ContactMember member, ContactMember ...newMembers);
+    void addMembers(ContactMember member, ContactMember... newMembers);
 
     int memberCount();
 }

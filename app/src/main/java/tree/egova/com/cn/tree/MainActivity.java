@@ -5,7 +5,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import egova.com.cn.widget.DefaultTreeViewAdapter;
 import egova.com.cn.widget.TreeView;
+import egova.com.cn.widget.model.GroupRepository;
 import tree.egova.com.cn.tree.impl.GroupRepositoryImpl;
 
 
@@ -25,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
         treeView.setHeaderView(getLayoutInflater().inflate(R.layout.list_head_view, treeView,
                 false));
         GroupRepository groupRepository = new GroupRepositoryImpl();
-        treeView.setAdapter(new TreeViewAdapter(this, treeView, groupRepository));
+        treeView.setAdapter(new DefaultTreeViewAdapter(this, treeView, groupRepository));
     }
 
     @Override

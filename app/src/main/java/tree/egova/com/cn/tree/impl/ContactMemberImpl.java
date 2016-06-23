@@ -1,6 +1,6 @@
 package tree.egova.com.cn.tree.impl;
 
-import tree.egova.com.cn.tree.ContactMember;
+import egova.com.cn.widget.model.ContactMember;
 
 public class ContactMemberImpl implements ContactMember {
     private final String name;

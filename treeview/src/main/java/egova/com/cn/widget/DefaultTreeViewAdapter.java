@@ -1,4 +1,4 @@
-package tree.egova.com.cn.tree;
+package egova.com.cn.widget;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import egova.com.cn.widget.BaseTreeViewAdapter;
-import egova.com.cn.widget.TreeView;
+import egova.com.cn.widget.model.ContactMember;
+import egova.com.cn.widget.model.GroupRepository;
 
 import static android.widget.Toast.makeText;
 
@@ -19,42 +19,11 @@ import static android.widget.Toast.makeText;
  * @author markmjw
  * @date 2014-01-04
  */
-public class TreeViewAdapter extends BaseTreeViewAdapter {
+public class DefaultTreeViewAdapter extends BaseTreeViewAdapter {
     private LayoutInflater mInflater;
     private GroupRepository groupRepository;
 
-//    private String[] mGroups = {
-//            "Group 01", "Group 02", "Group 03", "Group 04", "Group 05",
-//            "Group 06", "Group 07", "Group 08", "Group 09", "Group 10",
-//            "Group 11", "Group 12", "Group 13", "Group 14", "Group 15",
-//            "Group 16", "Group 17", "Group 18", "Group 19", "Group 20",
-//            "Group21"};
-//
-//    private String[][] mChildren = {
-//            {"Way", "Arnold", "Barry", "Chuck", "David", "Afghanistan", "Albania", "Belgium", "Lily", "Jim", "LiMing", "Jodan"},
-//            {"Ace", "Bandit", "Cha-Cha", "Deuce", "Bahamas", "China", "Dominica", "Jim", "LiMing", "Jodan"},
-//            {"Fluffy", "Snuggles", "Ecuador", "Ecuador", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Way", "Arnold", "Barry", "Chuck", "David", "Afghanistan", "Albania", "Belgium", "Lily", "Jim", "LiMing", "Jodan"},
-//            {"Ace", "Bandit", "Cha-Cha", "Deuce", "Bahamas", "China", "Dominica", "Jim", "LiMing", "Jodan"},
-//            {"Fluffy", "Snuggles", "Ecuador", "Ecuador", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Way", "Arnold", "Barry", "Chuck", "David", "Afghanistan", "Albania", "Belgium", "Lily", "Jim", "LiMing", "Jodan"},
-//            {"Ace", "Bandit", "Cha-Cha", "Deuce", "Bahamas", "China", "Dominica", "Jim", "LiMing", "Jodan"},
-//            {"Fluffy", "Snuggles", "Ecuador", "Ecuador", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Way", "Arnold", "Barry", "Chuck", "David", "Afghanistan", "Albania", "Belgium", "Lily", "Jim", "LiMing", "Jodan"},
-//            {"Ace", "Bandit", "Cha-Cha", "Deuce", "Bahamas", "China", "Dominica", "Jim", "LiMing", "Jodan"},
-//            {"Fluffy", "Snuggles", "Ecuador", "Ecuador", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {"Goldy", "Bubbles", "Iceland", "Iran", "Italy", "Jim", "LiMing", "Jodan"},
-//            {}
-//    };
-
-    public TreeViewAdapter(Context context, TreeView treeView, GroupRepository groupRepository) {
+    public DefaultTreeViewAdapter(Context context, TreeView treeView, GroupRepository groupRepository) {
         super(treeView);
 
         mInflater = LayoutInflater.from(context);

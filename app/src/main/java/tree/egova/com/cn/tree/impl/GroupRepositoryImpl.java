@@ -3,8 +3,8 @@ package tree.egova.com.cn.tree.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import tree.egova.com.cn.tree.Group;
-import tree.egova.com.cn.tree.GroupRepository;
+import egova.com.cn.widget.model.Group;
+import egova.com.cn.widget.model.GroupRepository;
 
 public class GroupRepositoryImpl implements GroupRepository {
     private List<Group> groups;

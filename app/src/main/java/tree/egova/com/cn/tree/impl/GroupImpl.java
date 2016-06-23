@@ -3,8 +3,8 @@ package tree.egova.com.cn.tree.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import tree.egova.com.cn.tree.ContactMember;
-import tree.egova.com.cn.tree.Group;
+import egova.com.cn.widget.model.ContactMember;
+import egova.com.cn.widget.model.Group;
 
 public class GroupImpl implements Group {
     private final String name;

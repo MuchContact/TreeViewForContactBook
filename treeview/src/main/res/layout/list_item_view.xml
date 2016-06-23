@@ -14,16 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="10.0dip"
         android:contentDescription="@null"
-        android:src="@drawable/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/stateicon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/icon"
-        android:layout_alignRight="@id/icon"
-        android:contentDescription="@null"
-        android:src="@drawable/status_online" />
+        android:src="@drawable/g_default_contact" />
 
     <TextView
         android:id="@+id/contact_list_item_name"

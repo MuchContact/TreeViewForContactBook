@@ -5,7 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import tree.egova.com.cn.tree.widget.TreeView;
+import egova.com.cn.widget.TreeView;
+
 
 public class MainActivity extends ActionBarActivity {
     private TreeView treeView;

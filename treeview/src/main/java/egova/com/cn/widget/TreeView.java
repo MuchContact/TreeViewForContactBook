@@ -1,4 +1,4 @@
-package tree.egova.com.cn.tree.widget;
+package egova.com.cn.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,11 +13,11 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 
 /**
- * This widget extends {@link android.widget.ExpandableListView}, just like TreeView(IOS).
+ * This widget extends {@link ExpandableListView}, just like TreeView(IOS).
  *
- * @see android.widget.ExpandableListView
  * @author markmjw
  * @date 2014-01-03
+ * @see ExpandableListView
  */
 public class TreeView extends ExpandableListView implements OnScrollListener, OnGroupClickListener {
     private static final int MAX_ALPHA = 255;
@@ -61,7 +61,7 @@ public class TreeView extends ExpandableListView implements OnScrollListener, On
      */
     public void setHeaderView(View view) {
         mHeaderView = view;
-        AbsListView.LayoutParams lp = new AbsListView.LayoutParams(ViewGroup.LayoutParams
+        LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(lp);
 
@@ -76,7 +76,7 @@ public class TreeView extends ExpandableListView implements OnScrollListener, On
     public void setAdapter(ExpandableListAdapter adapter) {
         super.setAdapter(adapter);
 
-        if(adapter instanceof ITreeViewHeaderUpdater) {
+        if (adapter instanceof ITreeViewHeaderUpdater) {
             mUpdater = (ITreeViewHeaderUpdater) adapter;
         } else {
             throw new IllegalArgumentException("The adapter must instanceof ITreeViewHeaderUpdater.");
@@ -147,16 +147,16 @@ public class TreeView extends ExpandableListView implements OnScrollListener, On
         return false;
     }
 
-//    @Override
-//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//
-//        if (mHeaderView != null) {
-//            measureChild(mHeaderView, widthMeasureSpec, heightMeasureSpec);
-//            mHeaderWidth = mHeaderView.getMeasuredWidth();
-//            mHeaderHeight = mHeaderView.getMeasuredHeight();
-//        }
-//    }
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        if (mHeaderView != null) {
+            measureChild(mHeaderView, widthMeasureSpec, heightMeasureSpec);
+            mHeaderWidth = mHeaderView.getMeasuredWidth();
+            mHeaderHeight = mHeaderView.getMeasuredHeight();
+        }
+    }
 
     private int mOldState = -1;
 

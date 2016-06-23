@@ -1,7 +1,7 @@
 package tree.egova.com.cn.tree;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,7 +11,7 @@ import egova.com.cn.widget.model.GroupRepository;
 import tree.egova.com.cn.tree.impl.GroupRepositoryImpl;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     private TreeView treeView;
 
     @Override

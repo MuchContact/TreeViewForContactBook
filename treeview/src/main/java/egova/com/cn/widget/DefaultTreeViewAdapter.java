@@ -1,17 +1,16 @@
 package egova.com.cn.widget;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import egova.com.cn.widget.model.ContactMember;
 import egova.com.cn.widget.model.GroupRepository;
-
-import static android.widget.Toast.makeText;
 
 /**
  * TreeView demo adapter
@@ -84,7 +83,9 @@ public class DefaultTreeViewAdapter extends BaseTreeViewAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeText(v.getContext(), String.format("%s", contactMember.phone()), Toast.LENGTH_SHORT).show();
+                Uri number = Uri.parse(String.format("tel:%s", contactMember.phone()));
+                Intent callIntent = new Intent(Intent.ACTION_CALL, number);
+                v.getContext().startActivity(callIntent);
             }
         });
         return convertView;
